@@ -81,6 +81,7 @@ public class Player extends Character {
     public static const SEARCH_LOOT_FREQ:int = 20;
     public static const MAX_LOOT_DIST:Number = 1;
     public static const VAULT_CHEST:int = 1284;
+    public static const GIFT_CHEST:int = 1860;
     public static const HEALTH_POT:int = 2594;
     public static const MAGIC_POT:int = 2595;
     public static const MAX_STACK_POTS:int = 6;
@@ -876,7 +877,7 @@ public class Player extends Character {
 			return;
 		}
 		for each(goCont in map_.goDict_) { //find nearest chest
-			if (goCont.objectType_ == VAULT_CHEST) {
+			if (goCont.objectType_ == VAULT_CHEST || goCont.objectType_ == GIFT_CHEST) {
 				if (cont == null) {
 					cont = (goCont as Container);
 					dist = int((x_ -cont.x_) * (x_ -cont.x_) + (y_ -cont.y_) * (y_ -cont.y_));
